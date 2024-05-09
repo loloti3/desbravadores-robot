@@ -4,7 +4,7 @@ Resource      ../main.robot
 
 *** Keywords ***
 abrir_navegador
-    Open Browser    ${URL}    ${headlesschrome}
+    Open Browser    ${URL}    ${chrome}
     Set Window Size    1920    1080  
 
 clicar_elemento
