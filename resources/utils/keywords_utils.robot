@@ -24,8 +24,8 @@ gerar_cpf_aleatorio
 gerar_password_aleatorio
     #Senha precisa ter: uma letra maiúscula, uma letra minúscula, um número, um caractere especial(@#$%) e tamanho entre 8-12.
     ${password_numero} =     Generate Random String    3    [NUMBERS]
-    ${password_letras}=    Generate Random String    2    [LOWER]
-    ${password_letras1}=    Generate Random String    5    [UPPER]
-    ${caracteres_especiais} =     Generate Random String    1    !@#$%
-    ${password}=    Catenate    ${password_numero}${caracteres_especiais}${password_letras}${password_letras1}
+    ${password_letras}=    Generate Random String    5    [LETTERS]
+    #${password_letras1}=    Generate Random String    5    [UPPER]
+    ${caracteres_especiais} =     Generate Random String    1    @#$%
+    ${password}=    Catenate    ${password_numero}${caracteres_especiais}${password_letras}
     RETURN    ${password}

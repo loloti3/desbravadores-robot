@@ -150,12 +150,8 @@ campo_cpf_vazio_de_cadastrar_usuario
     elemento_contem_texto    //p[@class="css-bbipig" and contains(text(),'O campo CPF é obrigatório')]    O campo CPF é obrigatório   
     tirar_print    campos_vazios_cadastro_usuario_cpf.png
     fechar_navegador
- 
 
-
-
+cadastrar_diretoria
+    abrir_navegador
+    login_valido_keyword    ${EMAIL}    ${PASSWORD}
     
-    
-
-    
-
