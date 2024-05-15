@@ -29,3 +29,8 @@ gerar_password_aleatorio
     ${caracteres_especiais} =     Generate Random String    1    @#$%
     ${password}=    Catenate    ${password_numero}${caracteres_especiais}${password_letras}
     RETURN    ${password}
+
+gerar_nome_aleatorio_diretoria
+    ${nome} =     Generate Random String    5    [LOWER]
+    ${nome_personalizado} =    Evaluate    "${nome}".title()
+    RETURN    ${nome_personalizado}

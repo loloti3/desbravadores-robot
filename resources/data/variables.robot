@@ -3,7 +3,7 @@
 Resource    ../main.robot
 Documentation    Variaveis Globais
 *** Variables ***
-
+#TENHO QUE PADRONIZAR AS VARIAVEIS
 ${URL}    https://automacao.qacoders-academy.com.br/login
 ${EMAIL}    sysadmin@qacoders.com
 
@@ -27,7 +27,7 @@ ${edge}    Edge
 ${headlesschrome}    headlesschrome
 
 #variaveil de tempo de espera de execusão 
-${TIME_GERAL}    20
+${TIME_GERAL}    30
 
 
 

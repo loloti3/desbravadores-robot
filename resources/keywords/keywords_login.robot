@@ -4,7 +4,7 @@ Resource      ../main.robot
 
 *** Keywords ***
 abrir_navegador
-    Open Browser    ${URL}    ${chrome}
+    Open Browser    ${URL}    ${headlesschrome}
     Set Window Size    1920    1080  
 
 clicar_elemento
@@ -35,8 +35,9 @@ elemento_contem_texto
     Element Should Contain    ${element}    ${texto}
 
 tirar_print
-    [Arguments]    ${nome}
-    Capture Page Screenshot    ${nome}
+    [Arguments]    ${pasta}   ${nome}
+    Set Screenshot Directory    ${pasta}   
+    Capture Page Screenshot    ${nome}.png
 
 limpar_campo
     [Arguments]    ${element}
@@ -48,6 +49,8 @@ login_valido_keyword
     preencher_texto    ${CAMPO_LOGIN_EMAIL}    ${email}    
     preencher_texto    ${CAMPO_LOGIN_SENHA}    ${senha}    
     clicar_elemento    ${BOTAO_ENTRAR}
+
+
 
 
 
