@@ -178,13 +178,9 @@ editar_diretoria
     Sleep    2   
     clicar_elemento    ${CAMPO_CADASTROS}
     clicar_elemento    ${CAMPO_DIRETORIAS}
-    #Sleep    2
-    rolar_ate_acontecer    10   (//button[@class='css-kab9pu'])[2] 
-    #rolar_barra    (//button[@class='css-kab9pu'])[2]       
+    rolar_ate_acontecer    10   (//button[@class='css-kab9pu'])[2]     
     clicar_elemento    (//button[@class='css-kab9pu'])[2]  
     ${CODIGO_ULTIMA_DIRETORIA}=    Get Text    //ul[@class='css-76nm1l']/div/span
-    #Sleep    5   
-    #rolar_barra    //ul[@class="css-18psgb0"]/li[div/p[text()="${CODIGO_ULTIMA_DIRETORIA}"]]/div/button[@id="edit"]
     rolar_ate_acontecer    10    //ul[@class="css-18psgb0"]/li[div/p[text()="${CODIGO_ULTIMA_DIRETORIA}"]]/div/button[@id="edit"]
     tirar_print    logs/prints_diretoria   RolouParaUltimaDiretoria
     clicar_elemento    //ul[@class="css-18psgb0"]/li[div/p[text()="${CODIGO_ULTIMA_DIRETORIA}"]]/div/button[@id="edit"]    
@@ -192,10 +188,6 @@ editar_diretoria
     ${NOME_DIRETORIA}=    gerar_nome_aleatorio_diretoria
     preencher_texto    ${CAMPO_NOME_NOVA_DIRETORIA}    ${NOME_DIRETORIA}
     clicar_elemento    ${BOTAO_SALVAR} 
-    #rolar_barra    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[starts-with(text(), "${NOME_DIRETORIA}")]      
-    #elemento_visivel    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[starts-with(text(), "${NOME_DIRETORIA}")]
-    #Sleep    4
-    #rolar_barra    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[contains(text(), "${NOME_DIRETORIA}")] 
     rolar_ate_acontecer    10    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[contains(text(), "${NOME_DIRETORIA}")]          
     elemento_visivel    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[contains(text(), "${NOME_DIRETORIA}")]    
     tirar_print     logs/prints_diretoria   editar_diretoria
