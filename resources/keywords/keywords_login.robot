@@ -4,7 +4,7 @@ Resource      ../main.robot
 
 *** Keywords ***
 abrir_navegador
-    Open Browser    ${URL}    ${headlesschrome}
+    Open Browser    ${URL}    ${chrome} 
     Set Window Size    1920    1080  
 
 clicar_elemento
@@ -50,6 +50,9 @@ login_valido_keyword
     preencher_texto    ${CAMPO_LOGIN_SENHA}    ${senha}    
     clicar_elemento    ${BOTAO_ENTRAR}
 
+rolar_barra
+    [Arguments]    ${element}
+    Scroll Element Into View    ${element}   
 
 
 

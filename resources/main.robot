@@ -1,8 +1,10 @@
 *** Settings ***
+
 Documentation    Estrutura do projeto em pastas
 
 Library    SeleniumLibrary
 Library    String
+Library    ./utils/scroll.py
 #variaveis globais
 Resource   data/variables.robot
 #variaveis pages

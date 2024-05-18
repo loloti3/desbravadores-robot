@@ -155,7 +155,7 @@ cadastrar_diretoria
     ${NOME_DIRETORIA}=    gerar_nome_aleatorio_diretoria
     preencher_texto        ${CAMPO_NOME_NOVA_DIRETORIA}    ${NOME_DIRETORIA}  
     clicar_elemento    ${BOTAO_SALVAR}
-    tirar_print    logs/prints_usuario    preencheu_cadastro_diretoria
+    tirar_print    logs/prints_diretoria    preencheu_cadastro_diretoria
     elemento_nao_visivel    ${ALERTA_DE_CAMPOS_INCORRETOS_DIRETORIA}
     fechar_navegador
 
@@ -168,7 +168,7 @@ campo_diretoria_sem_nome
     clicar_elemento    ${BOTAO_CADASTRAR_DIRETORIA}
     clicar_elemento    ${BOTAO_SALVAR}
     elemento_contem_texto    ${ALERTA_CAMPO_DIRETORIA_EM_BRANCO}    O campo diretoria é obrigatório 
-    tirar_print    logs/prints_usuario    campo_diretoria_sem_nome
+    tirar_print    logs/prints_diretoria   campo_diretoria_sem_nome
     fechar_navegador
 
 editar_diretoria
@@ -177,4 +177,25 @@ editar_diretoria
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
     clicar_elemento    ${CAMPO_CADASTROS}
     clicar_elemento    ${CAMPO_DIRETORIAS}
-    
+    Sleep    5
+    rolar_barra    (//button[@class='css-kab9pu'])[2]       
+    Sleep    5
+    clicar_elemento    (//button[@class='css-kab9pu'])[2]  
+    Sleep    5   
+    ${CODIGO_ULTIMA_DIRETORIA}=    Get Text    //ul[@class='css-76nm1l']/div/span
+    Sleep    5   
+    rolar_barra    //ul[@class="css-18psgb0"]/li[div/p[text()="${CODIGO_ULTIMA_DIRETORIA}"]]/div/button[@id="edit"]
+    Sleep    2
+    tirar_print    logs/prints_diretoria   RolouParaUltimaDiretoria
+    clicar_elemento    //ul[@class="css-18psgb0"]/li[div/p[text()="${CODIGO_ULTIMA_DIRETORIA}"]]/div/button[@id="edit"]    
+    Sleep    2
+    limpar_campo    ${CAMPO_NOME_NOVA_DIRETORIA}  
+    Sleep    2
+    ${NOME_DIRETORIA}=    gerar_nome_aleatorio_diretoria
+    preencher_texto    ${CAMPO_NOME_NOVA_DIRETORIA}    ${NOME_DIRETORIA}
+    clicar_elemento    ${BOTAO_SALVAR} 
+    Sleep    8
+    rolar_barra    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[starts-with(text(), "${NOME_DIRETORIA}")]      
+    elemento_visivel    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[starts-with(text(), "${NOME_DIRETORIA}")]
+    tirar_print     logs/prints_diretoria   editar_diretoria
+    fechar_navegador
