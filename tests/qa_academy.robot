@@ -195,7 +195,9 @@ editar_diretoria
     preencher_texto    ${CAMPO_NOME_NOVA_DIRETORIA}    ${NOME_DIRETORIA}
     clicar_elemento    ${BOTAO_SALVAR} 
     Sleep    8
-    rolar_barra    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[starts-with(text(), "${NOME_DIRETORIA}")]      
-    elemento_visivel    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[starts-with(text(), "${NOME_DIRETORIA}")]
+    #rolar_barra    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[starts-with(text(), "${NOME_DIRETORIA}")]      
+    #elemento_visivel    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[starts-with(text(), "${NOME_DIRETORIA}")]
+    rolar_barra    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[contains(text(), "${NOME_DIRETORIA}")]      
+    elemento_visivel    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[contains(text(), "${NOME_DIRETORIA}")]    
     tirar_print     logs/prints_diretoria   editar_diretoria
     fechar_navegador
