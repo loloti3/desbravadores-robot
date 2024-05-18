@@ -4,7 +4,7 @@ Resource      ../main.robot
 
 *** Keywords ***
 abrir_navegador
-    Open Browser    ${URL}    ${chrome} 
+    Open Browser    ${URL}    ${headlesschrome} 
     Set Window Size    1920    1080  
 
 clicar_elemento
@@ -54,7 +54,9 @@ rolar_barra
     [Arguments]    ${element}
     Scroll Element Into View    ${element}   
 
-
+rolar_ate_acontecer
+    [Arguments]    ${quantidade}    ${argumento_key}
+    Wait Until Keyword Succeeds    1    ${quantidade}    Scroll Element Into View    ${argumento_key}    
 
 
 
