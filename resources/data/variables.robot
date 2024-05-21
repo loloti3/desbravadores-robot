@@ -12,13 +12,6 @@ ${EMAIL_INVALIDO}    sysadmin@ders.com
 ${PASSWORD_INVALIDO}    1234@Tes1
 ${TIPO_USUARIO}    ADMIN
 
-#variaveis temporarias
-
-${variavel_temporaria_nome}    ${EMPTY}
-${variavel_temporaria_email}    ${EMPTY}
-${variavel_temporaria_cpf}    ${EMPTY}
-${variavel_temporaria_password}    ${EMPTY}
-
 #variaveis navegador
 
 ${chrome}    Chrome

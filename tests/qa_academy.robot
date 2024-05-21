@@ -1,12 +1,13 @@
 
 *** Settings ***
-Documentation    testes de login e cadastro de usuário
+Documentation    testes de login e cadastro de usuário e diretoria
 Resource          ../resources/main.robot
 
 
 *** Test Cases ***
+#Lembrar de separar os testes em pastas 
 login_valido
-    [Tags]    CT01
+    [Tags]    T1    CT01
     abrir_navegador   
     preencher_texto    ${CAMPO_LOGIN_EMAIL}     ${EMAIL}
     preencher_texto    ${CAMPO_LOGIN_SENHA}     ${PASSWORD}
@@ -17,7 +18,7 @@ login_valido
     fechar_navegador
     
 login_invalido
-    [Tags]    CT01
+    [Tags]    T2    CT01
     abrir_navegador 
     preencher_texto    ${CAMPO_LOGIN_EMAIL}     ${EMAIL_INVALIDO}
     preencher_texto    ${CAMPO_LOGIN_SENHA}     ${PASSWORD_INVALIDO}
@@ -27,7 +28,7 @@ login_invalido
     fechar_navegador
 
 campo_email_e_senha_vazio
-    [Tags]    CT01
+    [Tags]    T3    CT01
     abrir_navegador
     limpar_campo    ${CAMPO_LOGIN_EMAIL}
     limpar_campo    ${CAMPO_LOGIN_SENHA}
@@ -37,7 +38,7 @@ campo_email_e_senha_vazio
     fechar_navegador
 
 campo_senha_vazio
-    [Tags]    CT01
+    [Tags]    T4    CT01
     abrir_navegador
     preencher_texto    ${CAMPO_LOGIN_EMAIL}     ${EMAIL}
     limpar_campo    ${CAMPO_LOGIN_SENHA}
@@ -46,7 +47,7 @@ campo_senha_vazio
     fechar_navegador
 
 campo_email_vazio
-    [Tags]    CT01
+    [Tags]    T5    CT01
     abrir_navegador
     preencher_texto    ${CAMPO_LOGIN_SENHA}     ${PASSWORD}
     clicar_elemento    ${BOTAO_ENTRAR}
@@ -54,7 +55,7 @@ campo_email_vazio
     fechar_navegador        
 
 fazer_logout
-    [Tags]    CT02 
+    [Tags]    T6    CT02 
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
     tirar_print    logs/prints_home    fez_login_para_logout
@@ -64,10 +65,10 @@ fazer_logout
     fechar_navegador
 
 cadastrar_usuario_com_sucesso
-    [Tags]    CT03     
+    [Tags]    T7    CT03     
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    clicar_elemento    ${CAMPO_CADASTROS}   
+    esperar_ate_acontecer    ${CAMPO_CADASTROS}    
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    #SÓ PARA GARANTIR QUE ESTÁ NA PÁGINA DE CADASTRO DE USUÁRIO
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -92,10 +93,10 @@ cadastrar_usuario_com_sucesso
 
 
 campos_nome_vazio_de _cadastrar_usuario   #os campos de senha não tem mesagem de erro por isso não os acresentei no teste
-    [Tags]    CT03
+    [Tags]    T8    CT03
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    clicar_elemento    ${CAMPO_CADASTROS} 
+    esperar_ate_acontecer    ${CAMPO_CADASTROS}  
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -105,10 +106,10 @@ campos_nome_vazio_de _cadastrar_usuario   #os campos de senha não tem mesagem d
     fechar_navegador
 
 campos_email_vazio_de _cadastrar_usuario 
-    [Tags]    CT03
+    [Tags]    T9    CT03
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    clicar_elemento    ${CAMPO_CADASTROS} 
+    esperar_ate_acontecer    ${CAMPO_CADASTROS} 
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -118,10 +119,10 @@ campos_email_vazio_de _cadastrar_usuario
     fechar_navegador
 
 campo_perfil_vazio_de_cadastrar_usuario
-    [Tags]    CT03
+    [Tags]    T10    CT03
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    clicar_elemento    ${CAMPO_CADASTROS} 
+    esperar_ate_acontecer    ${CAMPO_CADASTROS} 
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -131,10 +132,10 @@ campo_perfil_vazio_de_cadastrar_usuario
     fechar_navegador
 
 campo_cpf_vazio_de_cadastrar_usuario
-    [Tags]    CT03
+    [Tags]    T11    CT03
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    clicar_elemento    ${CAMPO_CADASTROS} 
+    esperar_ate_acontecer    ${CAMPO_CADASTROS}  
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -146,10 +147,10 @@ campo_cpf_vazio_de_cadastrar_usuario
 #Falta as mensagens de alerta
 
 cadastrar_diretoria
-    [Tags]    CT04
+    [Tags]    T12    CT04
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    clicar_elemento    ${CAMPO_CADASTROS}
+    esperar_ate_acontecer    ${CAMPO_CADASTROS} 
     clicar_elemento    ${CAMPO_DIRETORIAS}
     clicar_elemento    ${BOTAO_CADASTRAR_DIRETORIA}
     ${NOME_DIRETORIA}=    gerar_nome_aleatorio_diretoria
@@ -160,35 +161,35 @@ cadastrar_diretoria
     fechar_navegador
 
 campo_diretoria_sem_nome
-    [Tags]    CT09
+    [Tags]    T13    CT09
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    clicar_elemento    ${CAMPO_CADASTROS}
+    esperar_ate_acontecer    ${CAMPO_CADASTROS} 
     clicar_elemento    ${CAMPO_DIRETORIAS}
     clicar_elemento    ${BOTAO_CADASTRAR_DIRETORIA}
     clicar_elemento    ${BOTAO_SALVAR}
     elemento_contem_texto    ${ALERTA_CAMPO_DIRETORIA_EM_BRANCO}    O campo diretoria é obrigatório 
-    tirar_print    logs/prints_diretoria   campo_diretoria_sem_nome
+    tirar_print    logs/prints_diretoria   diretoria_sem_nome
     fechar_navegador
 
 editar_diretoria
-    [Tags]    CT0e
+    [Tags]    T14    CT04
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD} 
-    Sleep    2   
-    clicar_elemento    ${CAMPO_CADASTROS}
+    esperar_ate_acontecer    ${CAMPO_CADASTROS}  
+    #clicar_elemento    ${CAMPO_CADASTROS}
     clicar_elemento    ${CAMPO_DIRETORIAS}
-    rolar_ate_acontecer    10   (//button[@class='css-kab9pu'])[2]     
+    rolar_ate_acontecer    2   (//button[@class='css-kab9pu'])[2]     
     clicar_elemento    (//button[@class='css-kab9pu'])[2]  
     ${CODIGO_ULTIMA_DIRETORIA}=    Get Text    //ul[@class='css-76nm1l']/div/span
-    rolar_ate_acontecer    10    //ul[@class="css-18psgb0"]/li[div/p[text()="${CODIGO_ULTIMA_DIRETORIA}"]]/div/button[@id="edit"]
+    rolar_ate_acontecer    2    //ul[@class="css-18psgb0"]/li[div/p[text()="${CODIGO_ULTIMA_DIRETORIA}"]]/div/button[@id="edit"]
     tirar_print    logs/prints_diretoria   RolouParaUltimaDiretoria
     clicar_elemento    //ul[@class="css-18psgb0"]/li[div/p[text()="${CODIGO_ULTIMA_DIRETORIA}"]]/div/button[@id="edit"]    
     limpar_campo    ${CAMPO_NOME_NOVA_DIRETORIA}  
     ${NOME_DIRETORIA}=    gerar_nome_aleatorio_diretoria
     preencher_texto    ${CAMPO_NOME_NOVA_DIRETORIA}    ${NOME_DIRETORIA}
     clicar_elemento    ${BOTAO_SALVAR} 
-    rolar_ate_acontecer    10    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[contains(text(), "${NOME_DIRETORIA}")]          
+    rolar_ate_acontecer    2    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[contains(text(), "${NOME_DIRETORIA}")]          
     elemento_visivel    //p[text()="${CODIGO_ULTIMA_DIRETORIA}"]/ancestor::li//p[contains(text(), "${NOME_DIRETORIA}")]    
     tirar_print     logs/prints_diretoria   editar_diretoria
     fechar_navegador

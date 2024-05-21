@@ -55,9 +55,11 @@ rolar_barra
     Scroll Element Into View    ${element}   
 
 rolar_ate_acontecer
-    [Arguments]    ${quantidade}    ${argumento_key}
-    Wait Until Keyword Succeeds    1    ${quantidade}    Scroll Element Into View    ${argumento_key}    
+    [Arguments]    ${repeticoes}    ${element}
+    Wait Until Keyword Succeeds    1    ${repeticoes}    Scroll Element Into View    ${element}    
 
-
+esperar_ate_acontecer
+    [Arguments]    ${element}    
+    Wait Until Keyword Succeeds    1    2    clicar_elemento    ${element}     
 
 

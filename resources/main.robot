@@ -10,8 +10,8 @@ Resource   data/variables.robot
 #variaveis pages
 Resource   pages/login_pages.robot
 Resource   pages/home_pages.robot
-Resource   pages/novo_usuario_pages.robot
-Resource   pages/nova_diretoria.robot
+Resource   pages/usuario_pages.robot
+Resource   pages/diretoria_pages.robot
 #keywords
-Resource    ./keywords/keywords_login.robot
+Resource    ./keywords/keywords_gerais.robot
 Resource    ./utils/keywords_utils.robot
