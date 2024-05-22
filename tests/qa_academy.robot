@@ -3,7 +3,6 @@
 Documentation    testes de login e cadastro de usuário e diretoria
 Resource          ../resources/main.robot
 
-
 *** Test Cases ***
 #Lembrar de separar os testes em pastas 
 login_valido
@@ -68,7 +67,7 @@ cadastrar_usuario_com_sucesso
     [Tags]    T7    CT03     
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    esperar_ate_acontecer    ${CAMPO_CADASTROS}    
+    clicar_elemento_com_repeticao    ${CAMPO_CADASTROS}    
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    #SÓ PARA GARANTIR QUE ESTÁ NA PÁGINA DE CADASTRO DE USUÁRIO
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -96,7 +95,7 @@ campos_nome_vazio_de _cadastrar_usuario   #os campos de senha não tem mesagem d
     [Tags]    T8    CT03
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    esperar_ate_acontecer    ${CAMPO_CADASTROS}  
+    clicar_elemento_com_repeticao    ${CAMPO_CADASTROS}  
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -109,7 +108,7 @@ campos_email_vazio_de _cadastrar_usuario
     [Tags]    T9    CT03
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    esperar_ate_acontecer    ${CAMPO_CADASTROS} 
+    clicar_elemento_com_repeticao    ${CAMPO_CADASTROS} 
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -122,7 +121,7 @@ campo_perfil_vazio_de_cadastrar_usuario
     [Tags]    T10    CT03
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    esperar_ate_acontecer    ${CAMPO_CADASTROS} 
+    clicar_elemento_com_repeticao    ${CAMPO_CADASTROS} 
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -135,7 +134,7 @@ campo_cpf_vazio_de_cadastrar_usuario
     [Tags]    T11    CT03
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    esperar_ate_acontecer    ${CAMPO_CADASTROS}  
+    clicar_elemento_com_repeticao    ${CAMPO_CADASTROS}  
     clicar_elemento    ${BOTAO_USUARIOS}
     elemento_visivel    ${BOTAO_EDITAR_USUARIOS}    
     clicar_elemento    ${NOVO_CADASTRO_DE_USUARIO}
@@ -150,7 +149,7 @@ cadastrar_diretoria
     [Tags]    T12    CT04
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    esperar_ate_acontecer    ${CAMPO_CADASTROS} 
+    clicar_elemento_com_repeticao    ${CAMPO_CADASTROS} 
     clicar_elemento    ${CAMPO_DIRETORIAS}
     clicar_elemento    ${BOTAO_CADASTRAR_DIRETORIA}
     ${NOME_DIRETORIA}=    gerar_nome_aleatorio_diretoria
@@ -164,7 +163,7 @@ campo_diretoria_sem_nome
     [Tags]    T13    CT09
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD}
-    esperar_ate_acontecer    ${CAMPO_CADASTROS} 
+    clicar_elemento_com_repeticao    ${CAMPO_CADASTROS} 
     clicar_elemento    ${CAMPO_DIRETORIAS}
     clicar_elemento    ${BOTAO_CADASTRAR_DIRETORIA}
     clicar_elemento    ${BOTAO_SALVAR}
@@ -176,8 +175,7 @@ editar_diretoria
     [Tags]    T14    CT04
     abrir_navegador
     login_valido_keyword    ${EMAIL}    ${PASSWORD} 
-    esperar_ate_acontecer    ${CAMPO_CADASTROS}  
-    #clicar_elemento    ${CAMPO_CADASTROS}
+    clicar_elemento_com_repeticao    ${CAMPO_CADASTROS}  
     clicar_elemento    ${CAMPO_DIRETORIAS}
     rolar_ate_acontecer    2   (//button[@class='css-kab9pu'])[2]     
     clicar_elemento    (//button[@class='css-kab9pu'])[2]  

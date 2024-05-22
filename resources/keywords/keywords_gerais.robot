@@ -58,7 +58,7 @@ rolar_ate_acontecer
     [Arguments]    ${repeticoes}    ${element}
     Wait Until Keyword Succeeds    1    ${repeticoes}    Scroll Element Into View    ${element}    
 
-esperar_ate_acontecer
+clicar_elemento_com_repeticao
     [Arguments]    ${element}    
     Wait Until Keyword Succeeds    1    2    clicar_elemento    ${element}     
 

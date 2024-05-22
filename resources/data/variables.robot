@@ -20,7 +20,7 @@ ${edge}    Edge
 ${headlesschrome}    headlesschrome
 
 #variaveil de tempo de espera de execusão 
-${TIME_GERAL}    30
+${TIME_GERAL}    15
 
 
 
