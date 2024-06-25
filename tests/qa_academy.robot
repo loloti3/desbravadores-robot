@@ -133,6 +133,7 @@ campo_cpf_vazio_de_cadastrar_usuario
     clicar em botao usuario  
     clicar em botao criar novo usuario 
     clicar botao salvar
+    elemento visivel     //p[@class="css-bbipig" and contains(text(),'O campo CPF é obrigatório')]
     elemento contem texto    //p[@class="css-bbipig" and contains(text(),'O campo CPF é obrigatório')]    O campo CPF é obrigatório   
     tirar print    logs/prints_usuario    campos_vazios_cadastro_usuario_cpf
     fechar navegador
