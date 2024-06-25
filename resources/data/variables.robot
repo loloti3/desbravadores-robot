@@ -21,6 +21,6 @@ ${headlesschrome}    headlesschrome
 
 #variaveil de tempo de espera de execusão 
 ${TIME_GERAL}    15
-
+${repeticoes}    2
 
 

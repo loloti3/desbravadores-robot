@@ -15,3 +15,6 @@ Resource   pages/diretoria_pages.robot
 #keywords
 Resource    ./keywords/keywords_gerais.robot
 Resource    ./utils/keywords_utils.robot
+Resource    ./keywords/login_keywords.robot
+Resource    ./keywords/usuarios_keywords.robot
+Resource    ./keywords/diretoria_keywords.robot

@@ -1,6 +1,4 @@
 # desbravadores-robot
-Projeto de Automação da pagia de QA Coders utilizando Robot Framework
+Projeto de Automação da pagina QA Coders utilizando Robot Framework e Selenium Library os testes realizados são exploratórios baseados no comportamento do site por isso não coloquei os planos de teste no repositorio a ideia é você pensar nos planos e história do usuário. estou me divertindo bastante criando o projeto e não liguem pros comentários eles fazem parte do meu processo de aprendizagem depois irei tira-los :). 
 
-TAGS
- CT01-Testes da pagina de login
- CT02-Testes de cadastro de usuario 
+Este projeto é utilizado para estudos ,então, quando não estiver sempre atualizando farei um readme falando detalhadamente sobre ele, estou sempre trabalhando nele então nem sempre faço atualizações aqui no github pois prefiro colocar as versões mais estavéis por conta da pipeline.

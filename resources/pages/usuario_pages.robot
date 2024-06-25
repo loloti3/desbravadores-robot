@@ -12,3 +12,5 @@ ${CAMPO_CPF_USUARIO}    id=cpf
 ${CAMPO_CONFIRMAR_SENHA_USUARIO}    id=confirmPassword
 ${BOTAO_SALVAR}    id=save
 ${ALERTA_DE_CAMPOS_INCORRETOS_USUARIOS}    //div[@class="MuiAlert-message css-1xsto0d"]
+${ALERTA_DE_USUARIO_CADASTRADO}    //div[@class="MuiAlert-message css-1xsto0d"]
+${VARIAVEL_VAZIA}    {EMPTY}

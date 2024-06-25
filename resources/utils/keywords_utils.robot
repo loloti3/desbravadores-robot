@@ -9,7 +9,7 @@ gerar_nome_aleatorio
     ${sobrenome} =    Generate Random String    10    [LETTERS]
     ${nome_composto} =    Catenate    ${nome}    ${sobrenome}
     ${nome_personalizado} =    Evaluate    "${nome_composto}".title()
-    RETURN    ${nome_personalizado}
+    RETURN   ${nome_personalizado}
 
 gerar_email_aleatorio
     ${nome} =     Generate Random String    10    [LOWER]
